@@ -34,4 +34,13 @@ class ValidatorImplTest {
                 .withMessage(Validator.ERROR_MESSAGE);
         assertThatNoException().isThrownBy(() -> validator.checkRange(success));
     }
+
+    @ParameterizedTest
+    @DisplayName("입력 받은 값이 서로다른 숫자인가")
+    @CsvSource(value = {"131:123"}, delimiter = ':')
+    void checkDifferentNumber(String ex, String success) {
+        assertThatIllegalArgumentException().isThrownBy(() -> validator.checkDifferentNumber(ex))
+                .withMessage(Validator.ERROR_MESSAGE);
+        assertThatNoException().isThrownBy(() -> validator.checkDifferentNumber(success));
+    }
 }

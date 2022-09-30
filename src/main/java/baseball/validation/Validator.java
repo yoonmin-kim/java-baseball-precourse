@@ -8,4 +8,6 @@ public interface Validator {
     void checkLength(String input);
 
     void checkRange(String input);
+
+    void checkDifferentNumber(String input);
 }
