@@ -2,7 +2,10 @@ package baseball.validation;
 
 public interface Validator {
 
-    String ERROR_MESSAGE = "잘못된 값을 입력하셨습니다.";
+    int LIMIT_LENGTH = 3;
+    String ERROR_MESSAGE = "서로다른 " + LIMIT_LENGTH + "자리 수를 입력해주세요.";
 
     void checkLength(String input);
+
+    void checkRange(String input);
 }
