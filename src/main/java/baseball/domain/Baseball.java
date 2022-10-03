@@ -20,4 +20,8 @@ public class Baseball {
     public String result() {
         return result.result();
     }
+
+    public boolean isComplete() {
+        return result.isComplete();
+    }
 }

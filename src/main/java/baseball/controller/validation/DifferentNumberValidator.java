@@ -1,4 +1,4 @@
-package baseball.validation;
+package baseball.controller.validation;
 
 import java.util.Arrays;
 

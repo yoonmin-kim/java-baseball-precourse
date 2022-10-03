@@ -2,15 +2,19 @@ package baseball.domain.result;
 
 public abstract class Result {
 
+    public static final String COMPLETE_RESULT = "3스트라이크";
     private int strike;
     private int ball;
     private State state = State.NOTHING;
-    private String result = state.getDescription();
 
     public abstract String result();
 
     protected boolean isNothing(String result) {
         return state.isNothing() || State.NOTHING.getDescription().equals(result);
+    }
+
+    public boolean isComplete() {
+        return result().equals(COMPLETE_RESULT);
     }
 
     protected String getDescription() {
