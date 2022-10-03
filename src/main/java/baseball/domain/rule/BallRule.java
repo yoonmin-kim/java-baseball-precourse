@@ -1,17 +1,19 @@
 package baseball.domain.rule;
 
+import baseball.domain.result.Result;
 import java.util.Deque;
 import java.util.LinkedList;
 
 public class BallRule implements Rule {
 
     @Override
-    public int count(String input, String randomValue) {
+    public int count(String input, String randomValue, Result baseballResult) {
         Deque<Character> randomValueDeque = createRandomValueDeque(randomValue);
         int result = 0;
         for (int i = 0; i < input.length(); i++) {
             result = getBallCount(input, randomValueDeque, result, i);
         }
+        baseballResult.setBall(result);
         return result;
     }
 

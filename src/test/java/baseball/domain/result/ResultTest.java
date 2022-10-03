@@ -2,6 +2,7 @@ package baseball.domain.result;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -13,7 +14,12 @@ class ResultTest {
     private static final String NOTHING = State.NOTHING.getDescription();
     private static final String STRIKE = State.STRIKE.getDescription();
     private static final String BALL = State.BALL.getDescription();
-    Result result = new DefaultResult();
+    Result result;
+
+    @BeforeEach
+    void beforeEach() {
+        result = new DefaultResult();
+    }
 
     @Test
     @DisplayName("기본 결과는 낫싱")

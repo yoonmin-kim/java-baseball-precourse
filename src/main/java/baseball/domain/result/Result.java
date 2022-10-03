@@ -9,8 +9,8 @@ public abstract class Result {
 
     public abstract String result();
 
-    protected boolean isNothing() {
-        return state.isNothing();
+    protected boolean isNothing(String result) {
+        return state.isNothing() || State.NOTHING.getDescription().equals(result);
     }
 
     protected String getDescription() {
@@ -21,7 +21,7 @@ public abstract class Result {
         return strike;
     }
 
-    protected void setStrike(int strike) {
+    public void setStrike(int strike) {
         this.strike = strike;
     }
 
@@ -29,7 +29,7 @@ public abstract class Result {
         return ball;
     }
 
-    protected void setBall(int ball) {
+    public void setBall(int ball) {
         this.ball = ball;
     }
 

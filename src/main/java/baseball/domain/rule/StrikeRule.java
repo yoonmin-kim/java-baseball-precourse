@@ -1,13 +1,16 @@
 package baseball.domain.rule;
 
+import baseball.domain.result.Result;
+
 public class StrikeRule implements Rule {
 
     @Override
-    public int count(String input, String randomValue) {
+    public int count(String input, String randomValue, Result baseballResult) {
         int result = 0;
         for (int i = 0; i < input.length(); i++) {
             result = isStrikeThenAddCount(input, randomValue, result, i);
         }
+        baseballResult.setStrike(result);
         return result;
     }
 

@@ -12,7 +12,7 @@ public class StrikeResult extends Result {
     @Override
     public String result() {
         String strikeResult = result.result();
-        if (result.isNothing()) {
+        if (result.isNothing(strikeResult)) {
             return nothingStrikeResult(strikeResult);
         }
         return notNothingStrikeResult(strikeResult);
@@ -24,7 +24,7 @@ public class StrikeResult extends Result {
     }
 
     @Override
-    protected void setStrike(int strike) {
+    public void setStrike(int strike) {
         result.setStrike(strike);
     }
 
@@ -34,7 +34,7 @@ public class StrikeResult extends Result {
     }
 
     @Override
-    protected void setBall(int ball) {
+    public void setBall(int ball) {
         result.setBall(ball);
     }
 
