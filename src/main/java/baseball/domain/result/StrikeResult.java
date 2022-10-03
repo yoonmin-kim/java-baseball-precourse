@@ -28,6 +28,16 @@ public class StrikeResult extends Result {
         result.setStrike(strike);
     }
 
+    @Override
+    protected int getBall() {
+        return result.getBall();
+    }
+
+    @Override
+    protected void setBall(int ball) {
+        result.setBall(ball);
+    }
+
     private String notNothingStrikeResult(String strikeResult) {
         if (getStrike() != 0) {
             return strikeResult + " " + getStrike() + getDescription();
